@@ -54,16 +54,16 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.rgStatus = new DevExpress.XtraEditors.RadioGroup();
+            this.txeDueDate = new DevExpress.XtraEditors.TextEdit();
+            this.txeDescription = new DevExpress.XtraEditors.TextEdit();
+            this.txeName = new DevExpress.XtraEditors.TextEdit();
             this.lblStatus = new DevExpress.XtraEditors.LabelControl();
             this.txeDATE = new DevExpress.XtraEditors.TextEdit();
             this.txeCREATE = new DevExpress.XtraEditors.TextEdit();
             this.txeID = new DevExpress.XtraEditors.TextEdit();
-            this.gcGarment = new DevExpress.XtraGrid.GridControl();
-            this.gvGarment = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcPTerm = new DevExpress.XtraGrid.GridControl();
+            this.gvPTerm = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -80,15 +80,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgStatus.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeDueDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeDescription.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeDATE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeCREATE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcGarment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvGarment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPTerm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPTerm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -196,6 +196,7 @@
             this.bbiSave.Id = 21;
             this.bbiSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiSave.ImageOptions.SvgImage")));
             this.bbiSave.Name = "bbiSave";
+            this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -225,6 +226,7 @@
             this.bbiExcel.Id = 26;
             this.bbiExcel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiExcel.ImageOptions.SvgImage")));
             this.bbiExcel.Name = "bbiExcel";
+            this.bbiExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExcel_ItemClick);
             // 
             // barButtonItem1
             // 
@@ -299,15 +301,15 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.radioGroup1);
-            this.layoutControl1.Controls.Add(this.textEdit3);
-            this.layoutControl1.Controls.Add(this.textEdit2);
-            this.layoutControl1.Controls.Add(this.textEdit1);
+            this.layoutControl1.Controls.Add(this.rgStatus);
+            this.layoutControl1.Controls.Add(this.txeDueDate);
+            this.layoutControl1.Controls.Add(this.txeDescription);
+            this.layoutControl1.Controls.Add(this.txeName);
             this.layoutControl1.Controls.Add(this.lblStatus);
             this.layoutControl1.Controls.Add(this.txeDATE);
             this.layoutControl1.Controls.Add(this.txeCREATE);
             this.layoutControl1.Controls.Add(this.txeID);
-            this.layoutControl1.Controls.Add(this.gcGarment);
+            this.layoutControl1.Controls.Add(this.gcPTerm);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 160);
             this.layoutControl1.Name = "layoutControl1";
@@ -317,56 +319,60 @@
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // radioGroup1
+            // rgStatus
             // 
-            this.radioGroup1.AutoSizeInLayoutControl = true;
-            this.radioGroup1.Location = new System.Drawing.Point(119, 100);
-            this.radioGroup1.MenuManager = this.ribbonControl;
-            this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Properties.Columns = 2;
-            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            this.rgStatus.AutoSizeInLayoutControl = true;
+            this.rgStatus.Location = new System.Drawing.Point(119, 100);
+            this.rgStatus.MenuManager = this.ribbonControl;
+            this.rgStatus.Name = "rgStatus";
+            this.rgStatus.Properties.Columns = 2;
+            this.rgStatus.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Active"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "Non Active")});
-            this.radioGroup1.Size = new System.Drawing.Size(233, 34);
-            this.radioGroup1.StyleController = this.layoutControl1;
-            this.radioGroup1.TabIndex = 15;
+            this.rgStatus.Size = new System.Drawing.Size(233, 34);
+            this.rgStatus.StyleController = this.layoutControl1;
+            this.rgStatus.TabIndex = 4;
             // 
-            // textEdit3
+            // txeDueDate
             // 
-            this.textEdit3.Location = new System.Drawing.Point(119, 76);
-            this.textEdit3.MenuManager = this.ribbonControl;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.MaxLength = 50;
-            this.textEdit3.Size = new System.Drawing.Size(233, 20);
-            this.textEdit3.StyleController = this.layoutControl1;
-            this.textEdit3.TabIndex = 14;
+            this.txeDueDate.Location = new System.Drawing.Point(119, 76);
+            this.txeDueDate.MenuManager = this.ribbonControl;
+            this.txeDueDate.Name = "txeDueDate";
+            this.txeDueDate.Properties.MaxLength = 50;
+            this.txeDueDate.Size = new System.Drawing.Size(233, 20);
+            this.txeDueDate.StyleController = this.layoutControl1;
+            this.txeDueDate.TabIndex = 3;
+            this.txeDueDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeDueDate_KeyDown);
             // 
-            // textEdit2
+            // txeDescription
             // 
-            this.textEdit2.Location = new System.Drawing.Point(119, 52);
-            this.textEdit2.MenuManager = this.ribbonControl;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.MaxLength = 50;
-            this.textEdit2.Size = new System.Drawing.Size(233, 20);
-            this.textEdit2.StyleController = this.layoutControl1;
-            this.textEdit2.TabIndex = 13;
+            this.txeDescription.Location = new System.Drawing.Point(119, 52);
+            this.txeDescription.MenuManager = this.ribbonControl;
+            this.txeDescription.Name = "txeDescription";
+            this.txeDescription.Properties.MaxLength = 50;
+            this.txeDescription.Size = new System.Drawing.Size(233, 20);
+            this.txeDescription.StyleController = this.layoutControl1;
+            this.txeDescription.TabIndex = 2;
+            this.txeDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeDescription_KeyDown);
             // 
-            // textEdit1
+            // txeName
             // 
-            this.textEdit1.EditValue = "";
-            this.textEdit1.Location = new System.Drawing.Point(119, 28);
-            this.textEdit1.MenuManager = this.ribbonControl;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.MaxLength = 50;
-            this.textEdit1.Size = new System.Drawing.Size(233, 20);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 12;
+            this.txeName.EditValue = "";
+            this.txeName.Location = new System.Drawing.Point(119, 28);
+            this.txeName.MenuManager = this.ribbonControl;
+            this.txeName.Name = "txeName";
+            this.txeName.Properties.MaxLength = 50;
+            this.txeName.Size = new System.Drawing.Size(233, 20);
+            this.txeName.StyleController = this.layoutControl1;
+            this.txeName.TabIndex = 1;
+            this.txeName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeName_KeyDown);
+            this.txeName.LostFocus += new System.EventHandler(this.txeName_LostFocus);
             // 
             // lblStatus
             // 
             this.lblStatus.Appearance.Font = new System.Drawing.Font("Tahoma", 8F);
             this.lblStatus.Appearance.Options.UseFont = true;
-            this.lblStatus.Location = new System.Drawing.Point(279, 4);
+            this.lblStatus.Location = new System.Drawing.Point(211, 4);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(63, 13);
             this.lblStatus.StyleController = this.layoutControl1;
@@ -381,7 +387,7 @@
             this.txeDATE.Properties.ReadOnly = true;
             this.txeDATE.Size = new System.Drawing.Size(233, 20);
             this.txeDATE.StyleController = this.layoutControl1;
-            this.txeDATE.TabIndex = 9;
+            this.txeDATE.TabIndex = 6;
             // 
             // txeCREATE
             // 
@@ -391,7 +397,7 @@
             this.txeCREATE.Properties.ReadOnly = true;
             this.txeCREATE.Size = new System.Drawing.Size(233, 20);
             this.txeCREATE.StyleController = this.layoutControl1;
-            this.txeCREATE.TabIndex = 8;
+            this.txeCREATE.TabIndex = 5;
             // 
             // txeID
             // 
@@ -399,30 +405,31 @@
             this.txeID.MenuManager = this.ribbonControl;
             this.txeID.Name = "txeID";
             this.txeID.Properties.ReadOnly = true;
-            this.txeID.Size = new System.Drawing.Size(156, 20);
+            this.txeID.Size = new System.Drawing.Size(88, 20);
             this.txeID.StyleController = this.layoutControl1;
-            this.txeID.TabIndex = 5;
+            this.txeID.TabIndex = 0;
             // 
-            // gcGarment
+            // gcPTerm
             // 
-            this.gcGarment.Location = new System.Drawing.Point(361, 30);
-            this.gcGarment.MainView = this.gvGarment;
-            this.gcGarment.MenuManager = this.ribbonControl;
-            this.gcGarment.Name = "gcGarment";
-            this.gcGarment.Size = new System.Drawing.Size(624, 363);
-            this.gcGarment.TabIndex = 4;
-            this.gcGarment.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvGarment});
+            this.gcPTerm.Location = new System.Drawing.Point(361, 30);
+            this.gcPTerm.MainView = this.gvPTerm;
+            this.gcPTerm.MenuManager = this.ribbonControl;
+            this.gcPTerm.Name = "gcPTerm";
+            this.gcPTerm.Size = new System.Drawing.Size(624, 363);
+            this.gcPTerm.TabIndex = 7;
+            this.gcPTerm.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvPTerm});
             // 
-            // gvGarment
+            // gvPTerm
             // 
-            this.gvGarment.DetailHeight = 377;
-            this.gvGarment.GridControl = this.gcGarment;
-            this.gvGarment.Name = "gvGarment";
-            this.gvGarment.OptionsBehavior.Editable = false;
-            this.gvGarment.OptionsBehavior.ReadOnly = true;
-            this.gvGarment.OptionsView.ShowGroupPanel = false;
-            this.gvGarment.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gvGarment_RowCellClick);
+            this.gvPTerm.DetailHeight = 377;
+            this.gvPTerm.GridControl = this.gcPTerm;
+            this.gvPTerm.Name = "gvPTerm";
+            this.gvPTerm.OptionsBehavior.Editable = false;
+            this.gvPTerm.OptionsBehavior.ReadOnly = true;
+            this.gvPTerm.OptionsView.ShowGroupPanel = false;
+            this.gvPTerm.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gvGarment_RowCellClick);
+            this.gvPTerm.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gvPTerm_RowStyle);
             // 
             // Root
             // 
@@ -457,7 +464,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.gcGarment;
+            this.layoutControlItem1.Control = this.gcPTerm;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(628, 367);
@@ -469,7 +476,7 @@
             this.layoutControlItem2.Control = this.txeID;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(275, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(207, 24);
             this.layoutControlItem2.Text = "OID Payment";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(112, 14);
             // 
@@ -484,9 +491,9 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(342, 0);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(274, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(10, 24);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(78, 24);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem6
@@ -510,7 +517,7 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.lblStatus;
-            this.layoutControlItem4.Location = new System.Drawing.Point(275, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(207, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(67, 24);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -518,7 +525,7 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.textEdit1;
+            this.layoutControlItem3.Control = this.txeName;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(352, 24);
@@ -527,7 +534,7 @@
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.textEdit2;
+            this.layoutControlItem7.Control = this.txeDescription;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(352, 24);
@@ -536,7 +543,7 @@
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.textEdit3;
+            this.layoutControlItem8.Control = this.txeDueDate;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(352, 24);
@@ -545,7 +552,7 @@
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.radioGroup1;
+            this.layoutControlItem9.Control = this.rgStatus;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem9.MaxSize = new System.Drawing.Size(0, 38);
             this.layoutControlItem9.MinSize = new System.Drawing.Size(169, 38);
@@ -572,15 +579,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgStatus.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeDueDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeDescription.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeDATE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeCREATE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcGarment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvGarment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPTerm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPTerm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -626,8 +633,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraEditors.TextEdit txeID;
-        private DevExpress.XtraGrid.GridControl gcGarment;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvGarment;
+        private DevExpress.XtraGrid.GridControl gcPTerm;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvPTerm;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
@@ -639,13 +646,13 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraEditors.LabelControl lblStatus;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txeName;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txeDueDate;
+        private DevExpress.XtraEditors.TextEdit txeDescription;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraEditors.RadioGroup radioGroup1;
+        private DevExpress.XtraEditors.RadioGroup rgStatus;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
     }
 }
