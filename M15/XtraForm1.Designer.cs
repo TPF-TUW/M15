@@ -427,6 +427,8 @@
             this.gvPTerm.Name = "gvPTerm";
             this.gvPTerm.OptionsBehavior.Editable = false;
             this.gvPTerm.OptionsBehavior.ReadOnly = true;
+            this.gvPTerm.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvPTerm.OptionsView.EnableAppearanceOddRow = true;
             this.gvPTerm.OptionsView.ShowGroupPanel = false;
             this.gvPTerm.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gvGarment_RowCellClick);
             this.gvPTerm.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gvPTerm_RowStyle);
