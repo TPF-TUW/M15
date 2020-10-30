@@ -74,24 +74,7 @@ namespace M15
 
         private void gvGarment_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-            lblStatus.Text = "* Edit Payment Term";
-            lblStatus.ForeColor = Color.Red;
-
-            txeID.Text = gvPTerm.GetFocusedRowCellValue("No").ToString();
-            txeName.Text = gvPTerm.GetFocusedRowCellValue("Name").ToString();
-            txeDescription.Text = gvPTerm.GetFocusedRowCellValue("Description").ToString();
-            txeDueDate.Text = gvPTerm.GetFocusedRowCellValue("DuedateCalculation").ToString();
-
-            int status = -1;
-            if (gvPTerm.GetFocusedRowCellValue("Status").ToString() != "")
-            {
-                status = Convert.ToInt32(gvPTerm.GetFocusedRowCellValue("Status").ToString());
-            }
-
-            selectStatus(status);
-
-            txeCREATE.Text = gvPTerm.GetFocusedRowCellValue("CreatedBy").ToString();
-            txeDATE.Text = gvPTerm.GetFocusedRowCellValue("CreatedDate").ToString();
+            
         }
 
         private void selectStatus(int value)
@@ -263,5 +246,26 @@ namespace M15
             System.Diagnostics.Process.Start(pathFile);
         }
 
+        private void gvPTerm_RowClick(object sender, RowClickEventArgs e)
+        {
+            lblStatus.Text = "* Edit Payment Term";
+            lblStatus.ForeColor = Color.Red;
+
+            txeID.Text = gvPTerm.GetFocusedRowCellValue("No").ToString();
+            txeName.Text = gvPTerm.GetFocusedRowCellValue("Name").ToString();
+            txeDescription.Text = gvPTerm.GetFocusedRowCellValue("Description").ToString();
+            txeDueDate.Text = gvPTerm.GetFocusedRowCellValue("DuedateCalculation").ToString();
+
+            int status = -1;
+            if (gvPTerm.GetFocusedRowCellValue("Status").ToString() != "")
+            {
+                status = Convert.ToInt32(gvPTerm.GetFocusedRowCellValue("Status").ToString());
+            }
+
+            selectStatus(status);
+
+            txeCREATE.Text = gvPTerm.GetFocusedRowCellValue("CreatedBy").ToString();
+            txeDATE.Text = gvPTerm.GetFocusedRowCellValue("CreatedDate").ToString();
+        }
     }
 }
