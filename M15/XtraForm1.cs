@@ -267,5 +267,15 @@ namespace M15
             txeCREATE.Text = gvPTerm.GetFocusedRowCellValue("CreatedBy").ToString();
             txeDATE.Text = gvPTerm.GetFocusedRowCellValue("CreatedDate").ToString();
         }
+
+        private void bbiPrintPreview_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gcPTerm.ShowPrintPreview();
+        }
+
+        private void bbiPrint_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gcPTerm.Print();
+        }
     }
 }
