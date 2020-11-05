@@ -105,8 +105,6 @@ namespace M15
                     sbSQL.Append("SELECT TOP(1) Name FROM PaymentTerm WHERE (Name = N'" + txeName.Text.Trim() + "') ");
                     if (new DBQuery(sbSQL).getString() != "")
                     {
-                        FUNC.msgWarning("Duplicate payment term. !! Please Change.");
-                        txeName.Text = "";
                         chkDup = false;
                     }
                 }
@@ -119,8 +117,6 @@ namespace M15
                     string strCHK = new DBQuery(sbSQL).getString();
                     if (strCHK != "" && strCHK != txeID.Text.Trim())
                     {
-                        FUNC.msgWarning("Duplicate payment term. !! Please Change.");
-                        txeName.Text = "";
                         chkDup = false;
                     }
                 }
@@ -138,17 +134,7 @@ namespace M15
 
         private void txeName_LostFocus(object sender, EventArgs e)
         {
-            txeName.Text = txeName.Text.ToUpper().Trim();
-            bool chkDup = chkDuplicate();
-            if (chkDup == false)
-            {
-                txeName.Text = "";
-                txeName.Focus();
-            }
-            else
-            {
-                txeDescription.Focus();
-            }
+            
         }
 
         private void txeDescription_KeyDown(object sender, KeyEventArgs e)
@@ -235,6 +221,12 @@ namespace M15
                             { }
                         }
                     }
+                    else
+                    {
+                        txeName.Text = "";
+                        txeName.Focus();
+                        FUNC.msgWarning("Duplicate payment term. !! Please Change.");
+                    }
                 }
             }
         }
@@ -248,6 +240,8 @@ namespace M15
 
         private void gvPTerm_RowClick(object sender, RowClickEventArgs e)
         {
+            if (gvPTerm.IsFilterRow(e.RowHandle)) return;
+
             lblStatus.Text = "* Edit Payment Term";
             lblStatus.ForeColor = Color.Red;
 
@@ -276,6 +270,25 @@ namespace M15
         private void bbiPrint_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             gcPTerm.Print();
+        }
+
+        private void txeName_Leave(object sender, EventArgs e)
+        {
+            if (txeName.Text.Trim() != "")
+            {
+                txeName.Text = txeName.Text.ToUpper().Trim();
+                bool chkDup = chkDuplicate();
+                if (chkDup == false)
+                {
+                    txeName.Text = "";
+                    txeName.Focus();
+                    FUNC.msgWarning("Duplicate payment term. !! Please Change.");
+                }
+                else
+                {
+                    txeDescription.Focus();
+                }
+            }
         }
     }
 }
