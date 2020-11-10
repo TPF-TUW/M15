@@ -82,10 +82,10 @@ namespace M15
             switch (value)
             {
                 case 0:
-                    rgStatus.SelectedIndex = 0;
+                    rgStatus.SelectedIndex = 1;
                     break;
                 case 1:
-                    rgStatus.SelectedIndex = 1;
+                    rgStatus.SelectedIndex = 0;
                     break;
                 default:
                     rgStatus.SelectedIndex = -1;
@@ -190,6 +190,7 @@ namespace M15
                             Status = rgStatus.Properties.Items[rgStatus.SelectedIndex].Value.ToString();
                         }
 
+                       // MessageBox.Show(Status);
                         if (lblStatus.Text == "* Add Payment Term")
                         {
                             sbSQL.Append("  INSERT INTO PaymentTerm(Name, Description, DueDateCalculation, Status, CreatedBy, CreatedDate) ");
